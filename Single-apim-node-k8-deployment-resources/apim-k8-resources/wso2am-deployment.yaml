@@ -75,6 +75,9 @@ spec:
           volumeMounts:
             - name: wso2am-conf
               mountPath: /home/wso2carbon/wso2-config-volume/repository/conf
+        - name: sidecar-container
+          image: busybox:1.32
+          command: ['sh', '-c', 'echo -e "Checking the connectivity between pods through k8 service names"; while true; do sleep 1; printf "%s %s\n" "$(date)"; nc -zv -w 2 "wso2am-single-node-am-service" 9443; done; echo -e "  >> END";']
       volumes:
         - name: wso2am-conf
           configMap:
