@@ -12,9 +12,9 @@ If you are required to capture the complete debug logs other than the SSL handsh
 
 In the containerized APIM deployment, you can define the above JVM parameter in the ```docker-entrypoint.sh```. However, it will be required additional effort of rebuilding the docker image by updating the default ```docker-entrypoint.sh``` or will be required to have a config map to mount the updated docker-entrypoint.sh into the APIM pod if it is k8 based deployment. 
 
-You can Inject the JVM parameter to the APIM server by either using  ```shall script arguments ``` or using the  ```“JAVA_OPTS” ``` environment variable. 
+You can Inject the JVM parameter to the APIM server by either using  ```Shell script arguments ``` or using the  ```“JAVA_OPTS” ``` environment variable. 
 
-## Shall Script arguments
+## Shell Script arguments
 
 The default  ```docker-entrypoint.sh``` file is implemented to accept the shall script argument to start the server, it can be used to pass the JVM parameters during the server startup. 
 
