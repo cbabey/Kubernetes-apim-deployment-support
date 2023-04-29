@@ -43,7 +43,7 @@ In a Kubernetes-based deployment, you can provide the argument that needs to inj
         - name: wso2am
           image: wso2/wso2am:4.0.0
           imagePullPolicy: Always
-          args: ["-Djavax.net.debug=ssl"]
+          args: ["-Djavax.net.debug=ssl:all"]
 ```
 
 ## ```“JAVA_OPTS”``` environment variable. 
@@ -66,6 +66,6 @@ In a k8 deployment, you can define the environment variable as below.
             - name: JVM_MEM_OPTS
               value: "-Xms1024m -Xmx1024m"
             - name: JAVA_OPTS
-              value: "-Djavax.net.debug=ssl"
+              value: "-Djavax.net.debug=ssl:all"
 
 ```
